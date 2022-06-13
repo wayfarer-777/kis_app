@@ -43,7 +43,7 @@ lst = [(1, 'Asur', 'Gete', 19000),
 
 
 def func_add():
-    win_add = Toplevel(root)
+    win_add = Toplevel()
     win_add.geometry('350x210+300+300')
     win_add.title('Добавление новой записи')
     # win_add.grab_set() # фокус на окно
@@ -58,34 +58,36 @@ def func_add():
         name = entr_name.get()
         print(family, name)
 
-    lbl_family = Label(win_add, text='Фамилия', padx=10).grid(
-        row=0, column=0, sticky='w')
-    lbl_name = Label(win_add, text='Имя', padx=10).grid(
-        row=1, column=0, sticky='w')
-    lbl_patronymic = Label(win_add, text='Отчество', padx=10).grid(
-        row=2, column=0, sticky='w')
-    lbl_post = Label(win_add, text='Должность', padx=10).grid(
-        row=3, column=0, sticky='w')
-    lbl_salary = Label(win_add, text='Оклад', padx=10).grid(
-        row=4, column=0, sticky='w')
-    lbl_office = Label(win_add, text='Кабинет', padx=10).grid(
-        row=5, column=0, sticky='w')
+    lbl_family = Label(win_add, text='Фамилия', padx=10)
+    lbl_family.grid(row=0, column=0, sticky='w')
+    lbl_name = Label(win_add, text='Имя', padx=10)
+    lbl_name.grid(row=1, column=0, sticky='w')
+    lbl_patronymic = Label(win_add, text='Отчество', padx=10)
+    lbl_patronymic.grid(row=2, column=0, sticky='w')
+    lbl_post = Label(win_add, text='Должность', padx=10)
+    lbl_post.grid(row=3, column=0, sticky='w')
+    lbl_salary = Label(win_add, text='Оклад', padx=10)
+    lbl_salary.grid(row=4, column=0, sticky='w')
+    lbl_office = Label(win_add, text='Кабинет', padx=10)
+    lbl_office.grid(row=5, column=0, sticky='w')
 
-    entr_family = Entry(win_add, width=25, textvariable=family).grid(
-        row=0, column=1, padx=3, pady=3, sticky='e')
-    entr_name = Entry(win_add, width=25).grid(row=1, column=1, padx=3, pady=3)
-    entr_patronymic = Entry(win_add, width=25).grid(
-        row=2, column=1, padx=3, pady=3)
-    entr_post = Entry(win_add, width=25).grid(row=3, column=1, padx=3, pady=3)
-    entr_salary = Entry(win_add, width=25).grid(
-        row=4, column=1, padx=3, pady=3)
-    entr_office = Entry(win_add, width=25).grid(
-        row=5, column=1, padx=3, pady=3)
+    entr_family = Entry(win_add, width=25)
+    entr_family.grid(row=0, column=1, padx=3, pady=3, sticky='e')
+    entr_name = Entry(win_add, width=25)
+    entr_name.grid(row=1, column=1, padx=3, pady=3)
+    entr_patronymic = Entry(win_add, width=25)
+    entr_patronymic.grid(row=2, column=1, padx=3, pady=3)
+    entr_post = Entry(win_add, width=25)
+    entr_post.grid(row=3, column=1, padx=3, pady=3)
+    entr_salary = Entry(win_add, width=25)
+    entr_salary.grid(row=4, column=1, padx=3, pady=3)
+    entr_office = Entry(win_add, width=25)
+    entr_office.grid(row=5, column=1, padx=3, pady=3)
 
-    btn_add_record = Button(win_add, text='Добавить', command=record_add).grid(
-        row=6, column=0, padx=3, pady=3, sticky='e')
-    btn_cancel_record = Button(win_add, text='Отменить', command=record_cancel).grid(
-        row=6, column=1, padx=3, pady=3, sticky='w')
+    btn_add_record = Button(win_add, text='Добавить', command=record_add)
+    btn_add_record.grid(row=6, column=0, padx=3, pady=3, sticky='e')
+    btn_cancel_record = Button(win_add, text='Отменить', command=record_cancel)
+    btn_cancel_record.grid(row=6, column=1, padx=3, pady=3, sticky='w')
 
 
 # ********************************************************
@@ -95,13 +97,6 @@ def func_add():
 root = Tk()
 root.title('Добро пожаловать в приложение')
 root.geometry('965x250')
-
-family = StringVar()
-name = StringVar()
-patronymic = StringVar()
-post = StringVar()
-salary = StringVar()
-office = StringVar()
 
 
 # Рамки
